@@ -30,16 +30,7 @@ function HomePage({ darkMode, setDarkMode }) {
 	useEffect(() => {
 		const loadProfile = async () => {
 			try {
-
-				// First check if we have saved data in localStorage
-				const savedProfile = localStorage.getItem('userProfile');
-				if (savedProfile) {
-					const parsedProfile = JSON.parse(savedProfile);
-					setProfile(parsedProfile);
-					return;
-				}
-
-				// If no localStorage data, try to load from JSON file
+				// Load from JSON file
 				try {
 					console.log('Attempting to fetch /profile.json');
 					const response = await fetch(`${import.meta.env.BASE_URL}profile.json`);
@@ -53,8 +44,6 @@ function HomePage({ darkMode, setDarkMode }) {
 						};
 						console.log('Processed profile');
 						setProfile(processedProfile);
-						// Save to localStorage for future use
-						localStorage.setItem('userProfile', JSON.stringify(processedProfile));
 					} else {
 						throw new Error('Profile file not found');
 					}
@@ -93,6 +82,9 @@ function HomePage({ darkMode, setDarkMode }) {
 
 			<section className="home-container">
 				<h1>Welcome to my life</h1>
+				<section id="intro">
+					I am a qualified computer scientist from Stellenbosch univeristy with strong foundations in algorithms, networks, and software engineering. Experienced as an undergraduate teaching assistant, with hands-on project work in systems programming, networking, and compiler design.
+				</section>
 				<section id="education">
 					<h2>Education</h2>
 
@@ -133,10 +125,10 @@ function HomePage({ darkMode, setDarkMode }) {
 
 				<section className="experience" id="experience">
 				<h2>Experience / Skills</h2>
-					<p>Demi (undergrad teaching assisstant) for computer science: Assissted students in understanding their programs in both C and Assembly. Conducted lab sesstions where I provided debugging support and helped them understand the content better.</p>
+					<p>Demi (undergrad teaching assistant) for computer science: Assisted students in understanding their programs in both C and Assembly. Conducted lab sessions where I provided debugging support and helped them understand the content better.</p>
 					<p>Good working knowledge of many programming languages and willing to <strong>learn new languages</strong> when needed.<br />
 						High level proficiency in algorithm design and understanding network concepts, and software engineering practices through both academic and practical projects.<br />
-						My academic history also includes alot of <strong>Data Science</strong>, <strong>mathematics</strong>, <strong>Applied Mathematics</strong> and <strong>Operations Research</strong> modules which helps me alot to write efficient programms and mathematically complex programms</p>
+						My academic history also includes a lot of <strong>Data Science</strong>, <strong>mathematics</strong>, <strong>Applied Mathematics</strong> and <strong>Operations Research</strong> modules which helps me alot to write efficient programs and mathematically complex programms</p>
 
 					<h3>Technical skills</h3>
 					<h4>Programming languages:</h4>
@@ -172,14 +164,53 @@ function HomePage({ darkMode, setDarkMode }) {
 
 				<section className="projects" id="projects">
 					<h2>Projects</h2>
-					<ul>
-						<li>Personal CV website: Built using React</li>
-						<li>Chatroom with VoIP and voicenote functionality: Built with Java</li>
-						<li>Peer to peer file sharing app: Built using java</li>
-						<li>Compiler: Built using C and runs on JRE</li>
-						<li>Fruad detection algorithm: Built with python using ML techiques</li>
-						<li>Automatic irigation system: Built with python, PHP and HTML</li>
-					</ul>
+					<div className="project-item">
+						<h3>Collaborative Payment Splitting Application</h3>
+						<p><strong>Technologies:</strong> Python, Supabase, JavaScript, HTML, CSS</p>
+						<p>Developed in collaboration with a real company, providing valuable industry experience. Built the frontend interface for a group expense management system enabling users to create friend groups, record shared expenses, and automatically calculate bill splits. Application tracks payment history and outstanding balances between group members. Responsible for frontend development including user interface design and client-side logic.</p>
+					</div>
+
+					<div className="project-item">
+						<h3>Multiplayer Trivia Game</h3>
+						<p><strong>Technologies:</strong> Python, Supabase, JavaScript, HTML, CSS, Web Scraping</p>
+						<p>Created a real-time multiplayer trivia game with server-based architecture supporting multiple concurrent players. Primarily responsible for data acquisition pipeline, developing web scrapers to gather trivia questions and implementing data cleaning procedures to ensure question quality and consistency. Utilized Supabase for backend services managing game state, player connections, and question database.</p>
+					</div>
+
+					<div className="project-item">
+						<h3>Interactive CV Website</h3>
+						<p><strong>Technologies:</strong> React, Vite, JavaScript, CSS</p>
+						<p>Developed a fully functional single-page application featuring user authentication, dynamic blog post management, and editable profile sections. Implemented client-side state management without backend dependencies, utilizing browser storage for data persistence. Independently designed and built all components including a custom login system that enables content editing capabilities.</p>
+					</div>
+
+					<div className="project-item">
+						<h3>Multi-User Chatroom with VoIP Capabilities</h3>
+						<p><strong>Technologies:</strong> Java, JavaFX, Socket Programming, Encryption</p>
+						<p>Built a real-time communication platform supporting hundreds of concurrent users with live text chat, voice calling, and voice note functionality. Primarily responsible for backend architecture and server implementation, handling client connections, message routing, and end-to-end encryption. Developed custom GUI using JavaFX with user authentication and account creation system. Server managed all client communications with encrypted data transmission for secure messaging.</p>
+					</div>
+
+					<div className="project-item">
+						<h3>Peer-to-Peer File Sharing Application</h3>
+						<p><strong>Technologies:</strong> Java, Custom Network Protocol</p>
+						<p>Designed and implemented a decentralized file sharing system using a custom-built protocol. Features include searchable public folders across connected peers with privacy-preserving anonymous connections. Users can search shared content across the network without exposing their full directory structure. Developed both command-line and GUI interfaces, with significant technical challenges in maintaining user anonymity while enabling efficient peer discovery and file transfer.</p>
+					</div>
+
+					<div className="project-item">
+						<h3>Custom Language Compiler</h3>
+						<p><strong>Technologies:</strong> C, JVM Bytecode</p>
+						<p>Built a complete compiler from scratch targeting JVM bytecode for a custom programming language specification. Implemented all compilation stages including lexical analysis, parsing, semantic analysis with type checking, and code generation. Successfully generated executable JVM bytecode with particular complexity in implementing robust type checking and understanding JVM instruction set architecture.</p>
+					</div>
+
+					<div className="project-item">
+						<h3>Banking Fraud Detection System</h3>
+						<p><strong>Technologies:</strong> Python, Machine Learning (Regression, Random Forest)</p>
+						<p>Developed a machine learning model to identify fraudulent banking transactions using regression and random forest algorithms. Trained on a large-scale financial dataset, achieving strong accuracy in fraud classification. Implemented feature engineering and model evaluation to optimize detection performance.</p>
+					</div>
+
+					<div className="project-item">
+						<h3>Automated Irrigation Control System</h3>
+						<p><strong>Technologies:</strong> Python, PHP, HTML, Raspberry Pi</p>
+						<p>Engineered an IoT irrigation system using Raspberry Pi to control solenoid valves and water pumps via relay modules. Python handles hardware control logic for automated and manual watering activation, while a web interface built with PHP and HTML provides remote scheduling and manual control capabilities. System enables programmed watering schedules accessible through a browser-based dashboard.</p>
+					</div>
 				</section>
 			</section>
 
