@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 import profileImageDefault from '../assets/profile.jpg';
-import editIcon from '../assets/edit.png';
-import Blog from './Blog.jsx';
 
-function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLoginPage }) {
+function HomePage({ darkMode, setDarkMode }) {
 	const [sidebarVisible, setSidebarVisible] = useState(true);
 	const [isMobile, setIsMobile] = useState(false);
 
@@ -15,34 +13,8 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 		futurePlans: ''
 	});
 
-	const [editingInterests, setEditingInterests] = useState(false);
-	const [editingPlans, setEditingPlans] = useState(false);
-
 	// Add this new state
 	const [interestsText, setInterestsText] = useState("");
-
-	// Start editing with current interests
-	const startEditingInterests = () => {
-		setInterestsText(profile.interests.join(', '));
-		setEditingInterests(true);
-	};
-
-	const handleInterestsChange = (e) => {
-		setInterestsText(e.target.value);
-	};
-
-	const saveInterests = () => {
-		const newInterests = interestsText
-			.split(',')
-			.map(i => i.trim())
-			.filter(i => i.length > 0);
-		setProfile(prev => ({ ...prev, interests: newInterests }));
-		setEditingInterests(false);
-	};
-
-	const saveFuturePlans = () => {
-		setEditingPlans(false);
-	};
 
 	useEffect(() => {
 		function handleResize() {
@@ -54,10 +26,11 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
 
-	// Load profile data from JSON file and localStorage
+	// Load profile data from JSON file
 	useEffect(() => {
 		const loadProfile = async () => {
 			try {
+
 				// First check if we have saved data in localStorage
 				const savedProfile = localStorage.getItem('userProfile');
 				if (savedProfile) {
@@ -68,8 +41,8 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 
 				// If no localStorage data, try to load from JSON file
 				try {
-					console.log('Attempting to fetch /data/profile.json');
-					const response = await fetch('/data/profile.json');
+					console.log('Attempting to fetch /profile.json');
+					const response = await fetch('/profile.json');
 					if (response.ok) {
 						const data = await response.json();
 						// Use the data as-is from the JSON file
@@ -107,27 +80,6 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 		loadProfile();
 	}, []);
 
-	// Save profile data to localStorage whenever profile changes
-	useEffect(() => {
-		if (profile.image !== '' || profile.interests.length > 0 || profile.futurePlans !== '') {
-			localStorage.setItem('userProfile', JSON.stringify(profile));
-		}
-	}, [profile]);
-
-	const handleImageChange = (e) => {
-		const file = e.target.files[0];
-		if (file) {
-			const reader = new FileReader();
-			reader.onload = (event) => {
-				setProfile(prev => ({
-					...prev,
-					image: event.target.result
-				}));
-			};
-			reader.readAsDataURL(file);
-		}
-	};
-
 	return (
 		<div className="main-content">
 			{isMobile && (
@@ -145,6 +97,18 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 					<h2>Education</h2>
 
 					<div className="education-item">
+						<h3>Stellenbosch University — <em>Bachelor of Science in Computer Science (In Progress)</em></h3>
+						<p><strong>Expected Graduation:</strong> 2025<br />
+							Focal Area: <strong>Computer Science and Operations Research</strong><br />
+							Completed <strong>two Computer Science modules with distinction (75%+)</strong>:<br /></p>
+							<ul className="body-list">
+								<li><strong>CS113</strong> – Computer Science for Actuarial Studies </li>
+								<li><strong>CS313</strong> – Computer Networks</li>
+							</ul>
+							<p>Currently pursuing a degree in Computer Science with a strong focus on programming, algorithms, and problem-solving.</p>
+					</div>
+
+					<div className="education-item">
 						<h3>Brackenfell High School — <em>Matric Graduate with Honours</em></h3>
 						<p><strong>Graduated:</strong> 2020</p>
 						<ul className="body-list">
@@ -156,18 +120,6 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 							<li>Achieved <strong>78%</strong> in English</li>
 							<li>Achieved <strong>82%</strong> in Life Orientation</li>
 						</ul>
-					</div>
-
-					<div className="education-item">
-						<h3>Stellenbosch University — <em>Bachelor of Science in Computer Science (In Progress)</em></h3>
-						<p><strong>Expected Graduation:</strong> 2025<br />
-							Focal Area: <strong>Computer Science and Operations Research</strong><br />
-							Completed <strong>two Computer Science modules with distinction (75%+)</strong>:<br /></p>
-							<ul className="body-list">
-								<li><strong>CS113</strong> – Computer Science for Actuarial Studies </li>
-								<li><strong>CS313</strong> – Computer Networks</li>
-							</ul>
-							<p>Currently pursuing a degree in Computer Science with a strong focus on programming, algorithms, and problem-solving.</p>
 					</div>
 
 					<div className="education-item">
@@ -184,7 +136,7 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 					<p>Demi (undergrad teaching assisstant) for computer science: Assissted students in understanding their programs in both C and Assembly. Conducted lab sesstions where I provided debugging support and helped them understand the content better.</p>
 					<p>Good working knowledge of many programming languages and willing to <strong>learn new languages</strong> when needed.<br />
 						High level proficiency in algorithm design and understanding network concepts, and software engineering practices through both academic and practical projects.<br />
-						My academic history also includes alot of <strong>Data Science</strong>, <strong>mathematics</strong> and <strong>Applied Mathematics</strong> modules which helps me alot to write efficient programms and mathematically complex programms</p>
+						My academic history also includes alot of <strong>Data Science</strong>, <strong>mathematics</strong>, <strong>Applied Mathematics</strong> and <strong>Operations Research</strong> modules which helps me alot to write efficient programms and mathematically complex programms</p>
 
 					<h3>Technical skills</h3>
 					<h4>Programming languages:</h4>
@@ -229,41 +181,12 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 						<li>Automatic irigation system: Built with python, PHP and HTML</li>
 					</ul>
 				</section>
-
-				<section id="blog">
-					<Blog
-						darkMode={darkMode}
-						setDarkMode={setDarkMode}
-						isLoggedIn={isLoggedIn}
-						setIsLoggedIn={setIsLoggedIn}
-						setShowLoginPage={setShowLoginPage}
-					/>
-				</section>
 			</section>
 
 			<aside className={`sticky-sidebar ${sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'}`}>
-				<div className="login-out-container">
-					{isLoggedIn ? (
-						<button
-							className="login-out-btn logout"
-							onClick={() => setIsLoggedIn(false)}
-						>
-							Logout
-						</button>
-					) : (
-						<button
-							className="login-out-btn"
-							onClick={() => setShowLoginPage(true)}
-						>
-							Login
-						</button>
-					)}
-				</div>
-
 				<nav className="sidebar-nav">
 					<a href="#education">Education</a>
 					<a href="#experience">Experience / Skills</a>
-					<a href="#blog">Blog</a>
 					<a href="#projects">Projects</a>
 				</nav>
 
@@ -284,20 +207,6 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 							alt="Profile photo"
 							className="profile-image"
 						/>
-						{isLoggedIn && (
-							<>
-								<label htmlFor="profile-upload" className="edit-icon">
-									<img src={editIcon} alt="Edit" />
-								</label>
-								<input
-									id="profile-upload"
-									type="file"
-									accept="image/*"
-									style={{ display: 'none' }}
-									onChange={handleImageChange}
-								/>
-							</>
-						)}
 					</div>
 
 					<h2>Stephan Fourie</h2>
@@ -305,66 +214,17 @@ function HomePage({ darkMode, setDarkMode, isLoggedIn, setIsLoggedIn, setShowLog
 					{/* Interests Section */}
 					<h3>Interests</h3>
 					<div className="editable-section">
-						{editingInterests ? (
-							<textarea
-								value={interestsText}
-								onChange={handleInterestsChange}
-								onBlur={saveInterests}
-								onKeyDown={(e) => {
-									if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-										saveInterests();
-									} else if (e.key === 'Escape') {
-										setEditingInterests(false);
-									}
-								}}
-								autoFocus
-							/>
-						) : (
-							<ul className="interests-list">
-								{profile.interests.map((item, i) => (
-									<li key={i}>{item}</li>
-								))}
-							</ul>
-						)}
-						{isLoggedIn && !editingInterests && (
-							<img
-								src={editIcon}
-								alt="Edit"
-								className="edit-icon"
-								onClick={startEditingInterests}
-							/>
-						)}
+						<ul className="interests-list">
+							{profile.interests.map((item, i) => (
+								<li key={i}>{item}</li>
+							))}
+						</ul>
 					</div>
 
 					{/* Future Plans Section */}
 					<h3>Future plans</h3>
 					<div className="editable-section">
-						{editingPlans ? (
-							<textarea
-								value={profile.futurePlans}
-								onChange={(e) => setProfile({ ...profile, futurePlans: e.target.value })}
-								onBlur={saveFuturePlans}
-								onKeyDown={(e) => {
-									if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-										saveFuturePlans();
-									} else if (e.key === 'Escape') {
-										setEditingPlans(false);
-									}
-								}}
-								autoFocus
-								rows={4}
-							/>
-						) : (
-							<p style={{ whiteSpace: 'pre-wrap' }}>{profile.futurePlans}</p>
-						)}
-						{isLoggedIn && !editingPlans && (
-							<img
-								src={editIcon}
-								alt="Edit"
-								className="edit-icon"
-								onClick={() => setEditingPlans(true)}
-							/>
-						)}
+						<p style={{ whiteSpace: 'pre-wrap' }}>{profile.futurePlans}</p>
 					</div>
 				</div>
 			</aside>
