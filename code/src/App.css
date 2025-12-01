@@ -1,0 +1,140 @@
+/* ==============================
+   GLOBAL RESET AND VARIABLES
+   ============================== */
+:root {
+  --primary-bg: #007bff;
+  --secondary-bg: #f4f4f4;
+  --tertiary-bg: #b3e6d1;
+  --selected-bg: #28a745;
+  --text-color: #000;
+  --heading-color: #000;
+  --button-bg: #007bff;
+  --button-text: #fff;
+}
+
+/* Light theme (explicitly set for clarity) */
+html.light-mode,
+body.light-mode {
+  --primary-bg: #007bff;
+  --secondary-bg: #f4f4f4;
+  --tertiary-bg: #b3e6d1;
+  --selected-bg: #28a745;
+  --text-color: #000;
+  --heading-color: #000;
+  --button-bg: #007bff;
+  --button-text: #fff;
+}
+
+/* Dark theme variables */
+html.dark-mode,
+body.dark-mode {
+  --primary-bg: #222;
+  --secondary-bg: #111;
+  --tertiary-bg: #10332f;
+  --selected-bg: #28a745;
+  --text-color: #fff;
+  --heading-color: #fff;
+  --button-bg: #444;
+  --button-text: #fff;
+}
+
+/* ==============================
+   BASE STYLES
+   ============================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: Arial, sans-serif;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* Ensure root container fills screen */
+#root {
+  min-height: 100vh;
+  width: 100%;
+  color: var(--text-color);
+}
+
+/* ==============================
+   MAIN APP CONTAINER
+   ============================== */
+.app-container {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.nav-links a {
+  display: inline-block;
+  line-height: 1;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+}
+
+/* ==============================
+   BUTTONS
+   ============================== */
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--heading-color);
+  margin: 16px 0;
+  padding-bottom: 6px;
+  border-bottom: 3px solid color-mix(in srgb, var(--heading-color) 30%, transparent);
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--heading-color);
+  margin: 14px 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid color-mix(in srgb, var(--heading-color) 25%, transparent);
+  letter-spacing: 0.8px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 12px 0;
+  padding-bottom: 4px;
+  border-bottom: 2px solid color-mix(in srgb, var(--heading-color) 20%, transparent);
+  letter-spacing: 0.5px;
+}
+

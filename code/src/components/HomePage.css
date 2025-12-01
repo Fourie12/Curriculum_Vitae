@@ -1,0 +1,342 @@
+.main-content {
+  display: flex;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.home-container {
+  margin-top: 0;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--secondary-bg);
+  flex: 1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-logout-container {
+  text-align: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Default button styling (inherits global vars) */
+.login-out-btn {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover effect */
+.login-out-btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+/* Logout button variant */
+.login-out-btn.logout {
+  background-color: #e53935; /* red shade */
+  color: #fff;
+}
+
+.login-out-btn.logout:hover {
+  background-color: #c62828;
+}
+
+/* sticky sidebar */
+.sticky-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  position: sticky;
+  top: 20px;
+  height: calc(100vh - 40px);
+  background-color: var(--button-bg);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.sticky-sidebar a {
+  text-decoration: none;
+  color: var(--button-text);
+  font-weight: 500;
+  display: block;
+  padding: 6px 8px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+.sticky-sidebar a:hover {
+  filter: brightness(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Fixed navigation header */
+.sidebar-nav {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: var(--button-text);
+  background-color: var(--button-bg);
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: filter 0.3s ease, transform 0.1s ease;
+}
+
+.sidebar-nav a:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+/* Scrollable content area */
+.sidebar-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px;
+  padding-bottom: 30px;
+}
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1px 0;
+}
+
+.sidebar-toggle-btn {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 14px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: filter 0.3s ease;
+}
+
+.sidebar-toggle-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Dark Mode Toggle Button */
+.sidebar-dark-toggle {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: filter 0.3s ease, transform 0.1s ease;
+}
+
+.sidebar-dark-toggle:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+/* Profile section wrapper */
+.profile-section {
+  position: relative;
+  width: 160px;
+  margin: 0 auto 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Profile image */
+.profile-section .profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Edit icon on profile image */
+.profile-section .edit-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.profile-section:hover .edit-icon {
+  opacity: 1;
+}
+
+.interests-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.interests-list li {
+  margin-bottom: 6px;
+}
+
+.body-list {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.body-list li {
+  margin-bottom: 6px;
+}
+
+#education p {
+  margin: 5px 0;
+  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#experience p {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  .sticky-sidebar {
+    position: fixed;
+    top: 10px;
+    right: 0;
+    width: 220px;
+    height: 100vh;
+    background-color: var(--button-bg);
+    padding: 20px;
+    box-shadow: -3px 0 6px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    z-index: 999;
+
+    /* Start hidden offscreen */
+    transform: translateX(100%);
+  }
+
+  /* Slide in */
+  .sticky-sidebar.sidebar-visible {
+    transform: translateX(0);
+  }
+
+  /* Slide out */
+  .sticky-sidebar.sidebar-hidden {
+    transform: translateX(100%);
+  }
+
+  /* Show toggle button */
+  .sidebar-toggle-btn {
+    display: block;
+  }
+}
+
+/* Editable sections & edit icon */
+.editable-section {
+  position: relative;
+  padding-right: 24px; /* space for edit icon */
+}
+
+.edit-icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  filter: invert(1); /* Ensures visibility on dark background */
+}
+
+.editable-section:hover .edit-icon,
+.profile-section:hover .edit-icon {
+  opacity: 1;
+}
+
+textarea {
+  width: 100%;
+  min-height: 80px;
+  font-size: 14px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* Logout button red styling */
+.login-out-btn.logout {
+  background-color: #d9534f;
+  color: white;
+}
+
+.login-out-btn.logout:hover {
+  background-color: #c9302c;
+}
+
+.experience ul {
+	/*columns: auto;*/
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 30px;
+	width: 100%;
+	list-style-position: inside;
+	padding-left: 0px;
+}
+
+.experience ul li {
+	break-inside: avoid;
+	margin-bottom: 5px;
+}
+
+.projects ul {
+	list-style-position: inside;
+	padding-left: 0px;
+}
+
+.projects ul li {
+	margin-bottom: 5px;
+}
