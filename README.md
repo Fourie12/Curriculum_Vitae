@@ -4,7 +4,6 @@
 This is a **React.js personal website project** that includes:
 - **Profile Section** (Photo, Interests, Future Plans)  
 - **Education & Skills**  
-- **Blog** (search, tags, sorting)  
 - **Login functionality** for secure editing  
 
 ---
@@ -116,13 +115,9 @@ in the terminal where the server is running.
 │   ├── package.json
 │   ├── package-lock.json
 │   ├── public
-│   │   ├── data
-│   │   │   ├── blog.json
-│   │   │   ├── profile.json
-│   │   │   └── users.json
 │   │   ├── favicon.ico
-│   │   └── uploads
-│   │       └── profile.jpg
+│   │   ├── profile.json
+│   │   └── profile.jpg
 │   └── src
 │       ├── App.css
 │       ├── App.jsx
@@ -131,12 +126,8 @@ in the terminal where the server is running.
 │       │   ├── edit.png
 │       │   └── profile.png
 │       ├── components
-│       │   ├── Blog.css
-│       │   ├── Blog.jsx
 │       │   ├── HomePage.css
-│       │   ├── HomePage.jsx
-│       │   ├── LoginPage.css
-│       │   └── LoginPage.jsx
+│       │   └── HomePage.jsx
 │       ├── index.css
 │       └── main.jsx
 └── README.md
