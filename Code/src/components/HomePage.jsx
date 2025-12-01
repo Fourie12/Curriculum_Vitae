@@ -42,7 +42,7 @@ function HomePage({ darkMode, setDarkMode }) {
 				// If no localStorage data, try to load from JSON file
 				try {
 					console.log('Attempting to fetch /profile.json');
-					const response = await fetch('/Curriculum_Vitae/profile.json');
+					const response = await fetch(`${import.meta.env.BASE_URL}profile.json`);
 					if (response.ok) {
 						const data = await response.json();
 						// Use the data as-is from the JSON file
