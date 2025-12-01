@@ -3,9 +3,7 @@
 ## 📌 Overview
 This is a **React.js personal website project** that includes:
 - **Profile Section** (Photo, Interests, Future Plans)  
-- **Education & Skills**  
-- **Login functionality** for secure editing  
-
+- **Education & Skills** 
 ---
 
 ## ⚙️ Prerequisites
