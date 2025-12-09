@@ -89,7 +89,7 @@ function HomePage({ darkMode, setDarkMode }) {
 					<h2>Education</h2>
 
 					<div className="education-item">
-						<h3>Stellenbosch University — <em>Bachelor of Science in Computer Science</em></h3>
+						<h3>Stellenbosch University — <em>Bachelor of Science in Computer Science (In Progress)</em></h3>
 						<p><strong>Graduated:</strong> 2025<br />
 							Focal Area: <strong>Computer Science and Operations Research</strong><br /></p>
 							<div className="uni-marks">
