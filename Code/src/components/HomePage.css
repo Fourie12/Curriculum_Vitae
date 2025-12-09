@@ -223,6 +223,24 @@
   margin-bottom: 6px;
 }
 
+.uni-marks {
+	display: flex;
+	gap: 20px;
+	width: 100%;
+}
+
+.column {
+	flex: 1;
+}
+
+.left {
+	margin-left: 10%;
+}
+
+.right {
+	margin-right: 10%;
+}
+
 #education p {
   margin: 5px 0;
   line-height: 1.4;
@@ -235,7 +253,7 @@
   line-height: 1.4;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .main-content {
     margin-top: 0;
     flex-direction: column;
@@ -270,6 +288,14 @@
   /* Show toggle button */
   .sidebar-toggle-btn {
     display: block;
+  }
+
+  .uni-marks {
+	  flex-direction: column;
+  }
+
+  .column {
+	  margin: 0px;	
   }
 }
 

@@ -18,8 +18,8 @@ function HomePage({ darkMode, setDarkMode }) {
 
 	useEffect(() => {
 		function handleResize() {
-			setIsMobile(window.innerWidth <= 768);
-			if (window.innerWidth > 768) setSidebarVisible(true);
+			setIsMobile(window.innerWidth <= 1000);
+			if (window.innerWidth > 1000) setSidebarVisible(true);
 		}
 		handleResize();
 		window.addEventListener('resize', handleResize);
@@ -90,14 +90,44 @@ function HomePage({ darkMode, setDarkMode }) {
 
 					<div className="education-item">
 						<h3>Stellenbosch University — <em>Bachelor of Science in Computer Science (In Progress)</em></h3>
-						<p><strong>Expected Graduation:</strong> 2025<br />
-							Focal Area: <strong>Computer Science and Operations Research</strong><br />
-							Completed <strong>two Computer Science modules with distinction (75%+)</strong>:<br /></p>
-							<ul className="body-list">
-								<li><strong>CS113</strong> – Computer Science for Actuarial Studies </li>
-								<li><strong>CS313</strong> – Computer Networks</li>
-							</ul>
-							<p>Currently pursuing a degree in Computer Science with a strong focus on programming, algorithms, and problem-solving.</p>
+						<p><strong>Graduated:</strong> 2025<br />
+							Focal Area: <strong>Computer Science and Operations Research</strong><br /></p>
+							<div className="uni-marks">
+								<div className="column left">
+									<p>Computer Science 113: <b>82%</b><br />
+									Computer Science 144: <b>63%</b><br />
+									Computer Science 214: <b>51%</b><br />
+									Computer Science 244: <b>60%</b><br />
+									Computer Science 313: <b>77%</b><br />
+									Computer Science 314: <b>56%</b><br />
+									Computer Science 343: <b>73%</b><br />
+									Computer Science 344: <b>65%</b><br /><br />
+
+									Data Science 141: <b>50%</b><br />
+									Data Science 241: <b>50%</b><br /><br />
+
+									Applied Mathematics 214: <b>61%</b><br />
+									Applied Mathematics 244: <b>65%</b></p>
+								</div>
+								<div className="column right">
+									<p>Operations Research 214: <b>68%</b><br />
+									Operations Research 244: <b>63%</b><br />
+									Operations Research 314: <b>50%</b><br />
+									Operations Research 322: <b>60%</b><br />
+									Operations Research 344: <b>52%</b><br />
+									Operations Research 352: <b>51%</b><br /><br />
+
+									Mathematics 114: <b>64%</b><br />
+									Mathematics 144: <b>54%</b><br />
+									Mathematics 154: <b>50%</b><br />
+									Mathematics 214: <b>51%</b><br />
+									Mathematics 244: <b>50%</b><br /><br />
+
+									Probability Theory and Statistics 114: 66%<br />
+									Physics 114: 68%<br /></p>
+								</div>
+							</div>
+							<p>Program focused on problem solving with efficient algorithm design from low level assembly to high level html. Full stack development was the whole focus of the program, teaching us backend, frontend and everything in between. Some of the core things we focused on were algorithms and skills of a good software engineer, not just having us learn a language, but to have us truly know how to code. Some of the things the program involved where: Networking, Server and client side code, data handling, efficient code, low level system design and tools like version control systems.</p>
 					</div>
 
 					<div className="education-item">
@@ -241,6 +271,14 @@ function HomePage({ darkMode, setDarkMode }) {
 					</div>
 
 					<h2>Stephan Fourie</h2>
+
+					{/* Contact */}
+					<h3>Contact</h3>
+					<div className="editable-section">
+						<strong>Phone:</strong> <a href="tel:+27832735089">+27 83 273 5089</a>
+						<strong>Email</strong> <a href="mailto:sfourie10@gmail.com">sfourie10@gmail.com</a>
+					</div>
+
 
 					{/* Interests Section */}
 					<h3>Interests</h3>
