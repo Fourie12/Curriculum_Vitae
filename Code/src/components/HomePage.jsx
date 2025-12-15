@@ -92,6 +92,9 @@ function HomePage({ darkMode, setDarkMode }) {
 						<h3>Stellenbosch University — <em>Bachelor of Science in Computer Science</em></h3>
 						<p><strong>Graduated:</strong> 2025<br />
 							Focal Area: <strong>Computer Science and Operations Research</strong><br /></p>
+							Degree average: <b>60%</b><br />
+							Computer science average: <b>65.9%</b><br />
+							Operations Research average: <b>57.3%</b><br />
 							<div className="uni-marks">
 								<div className="column left">
 									<p>Computer Science 113: <b>82%</b><br />
@@ -123,8 +126,8 @@ function HomePage({ darkMode, setDarkMode }) {
 									Mathematics 214: <b>51%</b><br />
 									Mathematics 244: <b>50%</b><br /><br />
 
-									Probability Theory and Statistics 114: 66%<br />
-									Physics 114: 68%<br /></p>
+									Probability Theory and Statistics 114: <b>66%</b><br />
+									Physics 114: <b>68%</b><br /></p>
 								</div>
 							</div>
 							<p>Program focused on problem solving with efficient algorithm design from low level assembly to high level html. Full stack development was the whole focus of the program, teaching us backend, frontend and everything in between. Some of the core things we focused on were algorithms and skills of a good software engineer, not just having us learn a language, but to have us truly know how to code. Some of the things the program involved where: Networking, Server and client side code, data handling, efficient code, low level system design and tools like version control systems.</p>
