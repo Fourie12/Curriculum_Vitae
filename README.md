@@ -1,4 +1,12 @@
-# Personal Website – CS343 Project 1
+# Stephan Fourie Curriculum Vitae
+
+## 🌐 Deployed Site
+
+The project is hosted on GitHub Pages and accessible at:
+
+**[https://fourie12.github.io/Curriculum_Vitae/](https://fourie12.github.io/Curriculum_Vitae/)**
+
+---
 
 ## 📌 Overview
 This is a **React.js personal website project** that includes:
@@ -108,26 +116,30 @@ in the terminal where the server is running.
 
 ```
 ├── Code
-│   ├── index.html
-│   ├── Makefile
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── public
-│   │   ├── favicon.ico
-│   │   ├── profile.json
-│   │   └── profile.jpg
-│   └── src
-│       ├── App.css
-│       ├── App.jsx
-│       ├── assets
-│       │   ├── delete.png
-│       │   ├── edit.png
-│       │   └── profile.png
-│       ├── components
-│       │   ├── HomePage.css
-│       │   └── HomePage.jsx
-│       ├── index.css
-│       └── main.jsx
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── Makefile
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── public
+│   │   ├── 404.html
+│   │   ├── favicon.ico
+│   │   ├── profile.json
+│   │   └── users.json
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── assets
+│   │   │   ├── delete.png
+│   │   │   ├── edit.png
+│   │   │   ├── profile.jpg
+│   │   │   └── react.svg
+│   │   ├── components
+│   │   │   ├── HomePage.css
+│   │   │   └── HomePage.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   └── vite.config.js
 └── README.md
 ```
 
@@ -146,6 +158,9 @@ in the terminal where the server is running.
   npm run dev
   ```
 
-## 🤖 AI decleration
-- Help with spellchecking: I code in text editors
+---
+
+## 🤖 AI Declaration
+- Help with spellchecking: I code in text editors like vim 
 - Debugging: error decoding and fault finding
+- README generation: Claude AI helped generate and format this README file
