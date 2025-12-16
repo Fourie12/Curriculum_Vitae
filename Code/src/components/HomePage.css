@@ -59,6 +59,8 @@
   flex-direction: column;
   width: 250px;
   position: sticky;
+  top: 5px;
+  align-self: flex-start;
   height: calc(100vh - 40px);
   background-color: var(--button-bg);
   padding: 10px;
