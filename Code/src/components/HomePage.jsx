@@ -245,6 +245,23 @@ function HomePage({ darkMode, setDarkMode }) {
 						<p>Engineered an IoT irrigation system using Raspberry Pi to control solenoid valves and water pumps via relay modules. Python handles hardware control logic for automated and manual watering activation, while a web interface built with PHP and HTML provides remote scheduling and manual control capabilities. System enables programmed watering schedules accessible through a browser-based dashboard.</p>
 					</div>
 				</section>
+
+				<section className="additional-experience" id="additional-experience">
+					<h2>Additional Work Experience</h2>
+						<div className="work-item">
+							<h3>Technical Team Member — <em>Brackenfell Wes Gemeente</em></h3>
+							<p><strong>Duration:</strong> March 2020 - Present</p>
+							<strong>Reference:</strong> Riaan Wiid, Technical Team Leader - <a href="tel:+27763740190">076 374 0190</a>
+							<p>Maintain and operate sound and video equipment for weekly services. Manage livestream broadcasts, mix live sound, and implement system upgrades. Responsible for troubleshooting technical issues and ensuring reliable audio-visual production.</p>
+						</div>
+
+						<div className="work-item">
+							<h3>Motorcycle Technician — <em>MotoJunction</em></h3>
+							<p><strong>Duration:</strong> June 2023 - August 2023</p>
+							<strong>Reference:</strong> JP Vermeulen, Owner - <a href="tel:+27729916390">072 991 6390</a>
+							<p>Holiday position performing motorcycle servicing and repairs. Conducted routine maintenance, diagnosed mechanical issues, and assisted senior technicians with complex repair work.</p>
+						</div>
+				</section>
 			</section>
 
 			<aside className={`sticky-sidebar ${sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'}`}>
@@ -252,6 +269,7 @@ function HomePage({ darkMode, setDarkMode }) {
 					<a href="#education">Education</a>
 					<a href="#experience">Experience / Skills</a>
 					<a href="#projects">Projects</a>
+					<a href="#additional-experience">Additional Experience</a>
 				</nav>
 
 				<button
