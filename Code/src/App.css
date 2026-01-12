@@ -2,13 +2,13 @@
    GLOBAL RESET AND VARIABLES
    ============================== */
 :root {
-  --primary-bg: #007bff;
-  --secondary-bg: #f4f4f4;
-  --tertiary-bg: #b3e6d1;
+  --primary-bg: #222;
+  --secondary-bg: #111;
+  --tertiary-bg: #10332f;
   --selected-bg: #28a745;
-  --text-color: #000;
-  --heading-color: #000;
-  --button-bg: #007bff;
+  --text-color: #fff;
+  --heading-color: #fff;
+  --button-bg: #444;
   --button-text: #fff;
 }
 
@@ -114,7 +114,7 @@ h1 {
   color: var(--heading-color);
   margin: 16px 0;
   padding-bottom: 6px;
-  border-bottom: 3px solid color-mix(in srgb, var(--heading-color) 30%, transparent);
+  border-bottom: 3px solid color-mix(in srgb, var(--heading-color) 50%, transparent);
   letter-spacing: 1px;
 }
 
@@ -124,7 +124,7 @@ h2 {
   color: var(--heading-color);
   margin: 14px 0;
   padding-bottom: 5px;
-  border-bottom: 2px solid color-mix(in srgb, var(--heading-color) 25%, transparent);
+  border-bottom: 2px solid color-mix(in srgb, var(--heading-color) 40%, transparent);
   letter-spacing: 0.8px;
 }
 
