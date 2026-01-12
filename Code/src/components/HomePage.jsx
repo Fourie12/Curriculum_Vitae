@@ -210,7 +210,7 @@ function HomePage({ darkMode, setDarkMode }) {
 					</div>
 
 					<div className="project-item">
-						<a href="https://github.com/Fourie12/Curriculum_Vitae" target="_blank" rel="noopener noreferrer">
+						<a className="project-link" href="https://github.com/Fourie12/Curriculum_Vitae" target="_blank" rel="noopener noreferrer">
 							<h3>Interactive CV Website 🔗</h3>
 						</a>
 						<p><strong>Technologies:</strong> React, Vite, JavaScript, CSS</p>
@@ -218,7 +218,7 @@ function HomePage({ darkMode, setDarkMode }) {
 					</div>
 
 					<div className="project-item">
-						<a href="https://github.com/Fourie12/VoipTest" target="_blank" rel="noopener noreferrer">
+						<a className="project-link" href="https://github.com/Fourie12/VoipTest" target="_blank" rel="noopener noreferrer">
 							<h3>Multi-User Chatroom with VoIP Capabilities 🔗</h3>
 						</a>
 						<p><strong>Technologies:</strong> Java, JavaFX, Socket Programming, Encryption</p>
@@ -244,7 +244,7 @@ function HomePage({ darkMode, setDarkMode }) {
 					</div>
 
 					<div className="project-item">
-						<a href="https://github.com/Fourie12/sprinklers" target="_blank" rel="noopener noreferrer">
+						<a className="project-link" href="https://github.com/Fourie12/sprinklers" target="_blank" rel="noopener noreferrer">
 							<h3>Automated Irrigation Control System 🔗</h3>
 						</a>
 						<p><strong>Technologies:</strong> Python, PHP, HTML, Raspberry Pi</p>

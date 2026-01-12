@@ -366,3 +366,8 @@ textarea {
 .projects ul li {
 	margin-bottom: 5px;
 }
+
+.project-link:hover h3{
+	color: blue;
+	text-decoration: underline;
+}
