@@ -297,6 +297,10 @@
   .column {
 	  margin: 0px;	
   }
+
+  .doc-btn {
+	  width: 80% !important;
+  }
 }
 
 /* Editable sections & edit icon */
@@ -370,4 +374,9 @@ textarea {
 .project-link:hover h3{
 	color: blue;
 	text-decoration: underline;
+}
+
+.doc-btn {
+	margin: 10px;
+	width: 40%;
 }

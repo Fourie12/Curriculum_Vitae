@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 import profileImageDefault from '../assets/profile.jpg';
+import CV from '../assets/Stephan_Fourie_CV.pdf';
+import transcript from '../assets/Stephan_Fourie_Academic_Record.pdf';
+import NSC from '../assets/Stephan_Fourie_NSC.pdf';
+import techneurship from '../assets/Datascience_Techpreneurship(certificate).pdf';
 
 function HomePage({ darkMode, setDarkMode }) {
 	const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -268,6 +272,23 @@ function HomePage({ darkMode, setDarkMode }) {
 							<p>Holiday position performing motorcycle servicing and repairs. Conducted routine maintenance, diagnosed mechanical issues, and assisted senior technicians with complex repair work.</p>
 						</div>
 				</section>
+
+				<section className="documents" id="documents">
+					<h2>Documents</h2>
+					<p>Click on any of the buttons below to download the supporting documents</p>
+					<a href={CV} download="Stephan_Fourie_cv.pdf">
+						<button className="doc-btn">Curriculum Vitae</button>
+					</a>
+					<a href={transcript} download="Stephan_Fourie_academic_transcript.pdf">
+						<button className="doc-btn">Academic transcript</button>
+					</a>
+					<a href={NSC} download="Stephan_Fourie_nsc.pdf">
+						<button className="doc-btn">NSC results</button>
+					</a>
+					<a href={techneurship} download="Stephan_Fourie_techneurship.pdf">
+						<button className="doc-btn">Techneurship Certificate</button>
+					</a>
+				</section>
 			</section>
 
 			<aside className={`sticky-sidebar ${sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'}`}>
@@ -276,6 +297,7 @@ function HomePage({ darkMode, setDarkMode }) {
 					<a href="#experience">Experience / Skills</a>
 					<a href="#projects">Projects</a>
 					<a href="#additional-experience">Additional Experience</a>
+					<a href="#documents">Documents</a>
 				</nav>
 
 				<button
