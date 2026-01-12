@@ -210,13 +210,17 @@ function HomePage({ darkMode, setDarkMode }) {
 					</div>
 
 					<div className="project-item">
-						<h3>Interactive CV Website</h3>
+						<a href="https://github.com/Fourie12/Curriculum_Vitae" target="_blank" rel="noopener noreferrer">
+							<h3>Interactive CV Website 🔗</h3>
+						</a>
 						<p><strong>Technologies:</strong> React, Vite, JavaScript, CSS</p>
 						<p>Developed a fully functional single-page application featuring user authentication, dynamic blog post management, and editable profile sections. Implemented client-side state management without backend dependencies, utilizing browser storage for data persistence. Independently designed and built all components including a custom login system that enables content editing capabilities.</p>
 					</div>
 
 					<div className="project-item">
-						<h3>Multi-User Chatroom with VoIP Capabilities</h3>
+						<a href="https://github.com/Fourie12/VoipTest" target="_blank" rel="noopener noreferrer">
+							<h3>Multi-User Chatroom with VoIP Capabilities 🔗</h3>
+						</a>
 						<p><strong>Technologies:</strong> Java, JavaFX, Socket Programming, Encryption</p>
 						<p>Built a real-time communication platform supporting hundreds of concurrent users with live text chat, voice calling, and voice note functionality. Primarily responsible for backend architecture and server implementation, handling client connections, message routing, and end-to-end encryption. Developed custom GUI using JavaFX with user authentication and account creation system. Server managed all client communications with encrypted data transmission for secure messaging.</p>
 					</div>
@@ -240,7 +244,9 @@ function HomePage({ darkMode, setDarkMode }) {
 					</div>
 
 					<div className="project-item">
-						<h3>Automated Irrigation Control System</h3>
+						<a href="https://github.com/Fourie12/sprinklers" target="_blank" rel="noopener noreferrer">
+							<h3>Automated Irrigation Control System 🔗</h3>
+						</a>
 						<p><strong>Technologies:</strong> Python, PHP, HTML, Raspberry Pi</p>
 						<p>Engineered an IoT irrigation system using Raspberry Pi to control solenoid valves and water pumps via relay modules. Python handles hardware control logic for automated and manual watering activation, while a web interface built with PHP and HTML provides remote scheduling and manual control capabilities. System enables programmed watering schedules accessible through a browser-based dashboard.</p>
 					</div>
