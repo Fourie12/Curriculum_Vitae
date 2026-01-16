@@ -326,6 +326,7 @@ function HomePage({ darkMode, setDarkMode }) {
 					<div className="editable-section">
 						<strong>Phone:</strong> <a href="tel:+27832735089">+27 83 273 5089</a>
 						<strong>Email</strong> <a href="mailto:sfourie10@gmail.com">sfourie10@gmail.com</a>
+						<strong>Github</strong> <a href="https://github.com/Fourie12" target="_blank">github.com/Fourie12</a>
 					</div>
 
 
